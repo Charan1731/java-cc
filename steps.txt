@@ -1,0 +1,14 @@
+docker build 
+    eval $(minikube docker-env)
+    docker build -t java-k8-app .
+
+
+to deploy to kubernetes
+    kubectl apply -f java-app-deployment.yaml
+    kubectl apply -f java-service.yaml
+
+to check deployment
+    kubectl get pods
+
+to verify deployment
+    kubectl logs <pod-name>
